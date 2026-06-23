@@ -1,0 +1,53 @@
+# ============================================================
+# 安全帽佩戴检测 - 实时推理系统依赖
+# 安装方式：pip install -r requirements.txt
+# PyTorch 请根据 CUDA 版本从 https://pytorch.org 单独安装
+# ============================================================
+
+# ---------- 基础核心库 ----------
+numpy>=1.21.0
+opencv-python>=4.5.0
+opencv-contrib-python>=4.5.0
+pillow>=9.0.0
+tqdm>=4.60.0
+matplotlib>=3.4.0
+
+# ---------- PyTorch (请自行安装 CUDA 版本) ----------
+# CUDA 11.8 示例:
+#   pip install torch==2.1.0 torchvision==0.16.0 --index-url https://download.pytorch.org/whl/cu118
+# CPU only:
+#   pip install torch torchvision
+torch>=1.13.0
+torchvision>=0.14.0
+
+# ---------- HuggingFace Transformers (VideoMAE 分类) ----------
+transformers>=4.30.0
+sentencepiece>=0.1.99
+protobuf>=3.20.0
+
+# ---------- 手部检测 ----------
+mediapipe>=0.10.0
+
+# ---------- 语音识别 (Vosk) ----------
+vosk>=0.3.45
+pyaudio>=0.2.14
+
+# ---------- TensorRT 推理 (blur5/blur6，可选) ----------
+# TensorRT 和 PyCUDA 需手动安装，不能通过 pip 直接安装 CUDA 依赖。
+# TensorRT: 从 NVIDIA 官网下载 .tar 包，解压后 pip install 对应 whl 文件
+# PyCUDA: pip install pycuda>=2022.1
+# tensorrt>=8.5.0
+# pycuda>=2022.1
+
+# ---------- YOLO 物体检测 (blur4，可选) ----------
+# blur4.py 使用 torch.hub 加载 YOLOv5,
+# 需先克隆 YOLOv5 仓库:
+#   git clone https://github.com/ultralytics/yolov5
+#   cd yolov5 && pip install -r requirements.txt
+# ultralytics>=8.0.0
+
+# ---------- 语音朗读 (系统依赖，非 pip) ----------
+# espeak: 用于中文语音朗读 (main_videomae_blur*.py 中的 speak_chinese())
+#   Linux:  sudo apt-get install espeak espeak-data
+#   macOS:  brew install espeak
+#   Windows: 从 https://espeak.sourceforge.net/ 下载安装
