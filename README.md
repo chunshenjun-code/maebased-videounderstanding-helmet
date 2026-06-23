@@ -17,5 +17,5 @@
 
 # 硬件架构
 本项目由上位机和边缘硬件（智能头盔本体）两部分组成。
-上位机主要用于模型训练，只要保证其系统环境与边缘硬件中的开发板相似即可。我用的是RTX3090 + ubuntu22.0.4配置，具体环境设置见requirement_host.txt。
-边缘硬件主要包括开发板（nVidia jetson orin nano，jetpack版本6.2）、摄像头（usb接口，30fps）、语音模块（usb接口，模拟声卡，带数字麦克风和小音箱）三部分。开发板环境设置见requirement_edge.txt
+上位机主要用于模型训练，只要保证其系统环境与边缘硬件中的开发板相似即可。我用的是RTX3090 + ubuntu22.0.4配置，具体环境设置见training目录下的requirement.txt。
+边缘硬件主要包括开发板（nVidia jetson orin nano，jetpack版本6.2）、摄像头（usb接口，30fps）、语音模块（usb接口，模拟声卡，带数字麦克风和小音箱）三部分。开发板环境设置见inference目录下的requirement.txt
